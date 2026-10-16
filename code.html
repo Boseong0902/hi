@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-muted":"#f1f5f9","surface-card":"#ffffff","on-surface":"#0b1c30","outline-variant":"#c4c6cf","on-primary":"#ffffff","surface-tint":"#455f87","status-success":"#2e7d5b","secondary-fixed-dim":"#bec6e0","inverse-surface":"#213145","status-danger-border":"#f1c7cb","background":"#f8f9ff","on-error-container":"#93000a","error":"#ba1a1a","status-warning-bg":"#fdf8f0","on-secondary-fixed-variant":"#3f465c","surface-variant":"#d3e4fe","surface-bright":"#f8f9ff","status-warning":"#b46d1b","surface-container-lowest":"#ffffff","status-danger-bg":"#fdf2f3","tertiary":"#002252","text-primary":"#0f172a","on-tertiary-fixed-variant":"#0a4492","on-secondary":"#ffffff","secondary-fixed":"#dae2fd","inverse-primary":"#adc8f5","on-primary-fixed":"#001c3b","text-muted":"#64748b","status-success-border":"#c2e0d3","on-primary-container":"#8aa4cf","surface-container-low":"#eff4ff","on-tertiary-fixed":"#001a42","on-tertiary-container":"#79a2f6","border-strong":"#cbd5e1","border-subtle":"#e2e8f0","on-secondary-container":"#5c647a","on-tertiary":"#ffffff","status-warning-border":"#f2dec0","inverse-on-surface":"#eaf1ff","text-secondary":"#334155","secondary-container":"#dae2fd","primary":"#022448","tertiary-fixed-dim":"#aec6ff","on-surface-variant":"#43474e","tertiary-fixed":"#d8e2ff","status-success-bg":"#f0f7f4","status-neutral-border":"#cbd5e1","tertiary-container":"#00367b","status-neutral-bg":"#f1f5f9","on-secondary-fixed":"#131b2e","surface-container":"#e5eeff","surface-container-highest":"#d3e4fe","status-neutral":"#475569","primary-container":"#1e3a5f","on-error":"#ffffff","surface-root":"#f8fafc","surface":"#f8f9ff","primary-fixed-dim":"#adc8f5","on-background":"#0b1c30","on-primary-fixed-variant":"#2d486d","surface-container-high":"#dce9ff","surface-dim":"#cbdbf5","error-container":"#ffdad6","primary-fixed":"#d5e3ff","outline":"#74777f","secondary":"#565e74","status-danger":"#a8323e"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1rem","margin-desktop":"2rem","space-xs":"0.25rem","margin-tablet":"1.5rem","space-xl":"2rem","space-sm":"0.5rem","space-lg":"1.25rem","gutter-desktop":"1.5rem","gutter":"1rem","space-md":"0.75rem"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Inter"],"headline-lg":["Inter"],"data-mono-sm":["JetBrains Mono"],"data-mono-md":["JetBrains Mono"],"headline-sm":["Inter"],"data-mono-lg":["JetBrains Mono"],"headline-xl-mobile":["Inter"],"label-sm":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-md":["Inter"],"body-sm":["Inter"]},"fontSize":{"body-md":["0.875rem",{"lineHeight":"1.375rem","letterSpacing":"-0.005em","fontWeight":"400"}],"headline-xl":["1.875rem",{"lineHeight":"2.25rem","letterSpacing":"-0.025em","fontWeight":"600"}],"headline-lg":["1.375rem",{"lineHeight":"1.875rem","letterSpacing":"-0.02em","fontWeight":"600"}],"data-mono-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"500"}],"data-mono-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-sm":["1rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"600"}],"data-mono-lg":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl-mobile":["1.375rem",{"lineHeight":"1.875rem","letterSpacing":"-0.02em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.05em","fontWeight":"600"}],"body-lg":["0.9375rem",{"lineHeight":"1.5rem","letterSpacing":"-0.01em","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.025em","fontWeight":"500"}],"headline-md":["1.125rem",{"lineHeight":"1.625rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","letterSpacing":"0em","fontWeight":"400"}]}}}}</script></head><body class="bg-surface-root font-body-md text-text-primary antialiased selection:bg-surface-variant selection:text-primary"><header class="fixed top-0 left-0 right-0 h-16 z-40 bg-surface-card/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.04)]"><div class="h-16 w-full px-6 flex items-center justify-between gap-6"><div class="flex items-center gap-6"><a class="flex items-center gap-3 select-none" data-path="dashboard" href="#"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-sm"><span class="text-on-primary font-headline-md font-bold tracking-tight">K</span></div><div class="flex flex-col"><span class="font-headline-sm text-text-primary tracking-tight leading-none">KIS자산평가</span><span class="font-label-sm text-text-muted uppercase tracking-wider mt-0.5">Korea Asset Pricing Groupware</span></div></a></div><div class="flex-1 max-w-xl mx-4"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-3.5 text-text-muted text-[18px] pointer-events-none">search</span><input class="w-full h-9 pl-10 pr-20 bg-surface-muted rounded-lg font-body-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:bg-surface-card transition-all shadow-inner" placeholder="문서, 결재선 양식, 임직원 옴니바 검색..." type="text"/><div class="absolute right-2.5 flex items-center gap-1 pointer-events-none"><kbd class="px-1.5 py-0.5 rounded bg-surface-card text-text-muted font-data-mono-sm text-[10px] shadow-sm">⌘K</kbd></div></div></div><div class="flex items-center gap-3"><div class="flex items-center gap-1 pr-2"><a class="relative p-2 rounded-lg text-text-secondary hover:bg-surface-muted hover:text-text-primary transition-colors flex items-center gap-1.5" data-path="approval-requests" href="#" title="결재요청 (내가 올린 문서)"><span class="material-symbols-outlined text-[20px]">send</span><span class="font-data-mono-sm text-text-secondary">요청</span><span class="px-1.5 py-0.5 rounded-full bg-surface-container text-primary font-data-mono-sm text-[11px] font-semibold">7</span></a><a class="relative p-2 rounded-lg text-text-secondary hover:bg-surface-muted hover:text-text-primary transition-colors flex items-center gap-1.5" data-path="approval-inbox" href="#" title="결재접수 (내 차례 대기)"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span class="font-data-mono-sm text-text-secondary">대기</span><span class="px-1.5 py-0.5 rounded-full bg-status-warning-bg text-status-warning font-data-mono-sm text-[11px] font-semibold">3</span></a><button class="relative p-2 rounded-lg text-text-secondary hover:bg-surface-muted hover:text-text-primary transition-colors" title="시스템 알림"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-danger"></span></button></div><a class="h-9 px-3.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm font-semibold flex items-center gap-2 shadow-sm transition-all hover:scale-[1.01] active:scale-[0.99]" data-path="draft-form" href="#"><span class="material-symbols-outlined text-[18px]">edit_document</span><span>새 결재 기안</span></a><div class="h-5 w-px bg-surface-muted mx-1"></div><div class="flex items-center gap-3 pl-1"><div class="flex flex-col text-right"><span class="font-body-sm font-semibold text-text-primary">김대리 책임</span><span class="font-label-sm text-text-muted">경영관리실 솔루션팀</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-card z-30 flex flex-col justify-between shadow-[0_1px_8px_rgba(15,23,42,0.03)] overflow-y-auto"><div class="p-4 space-y-5"><div class="p-3.5 rounded-xl bg-status-warning-bg shadow-sm"><div class="flex items-start justify-between gap-2"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-status-warning text-[18px]">pending_actions</span><span class="font-headline-sm text-text-primary text-[12px] font-semibold">결재 대기 현황</span></div><span class="px-1.5 py-0.2 rounded-full bg-status-warning text-surface-card font-data-mono-sm text-[11px] font-bold">3건 주의</span></div><p class="mt-1.5 font-body-sm text-[12px] text-text-secondary leading-snug">오늘 처리 기한인 리스크 심의건이 포함되어 있습니다.</p><a class="mt-2.5 inline-flex items-center gap-1 font-body-sm text-[12px] text-primary-container font-semibold hover:text-primary" data-path="approval-inbox" href="#"><span class="material-symbols-outlined text-[14px]">arrow_forward</span>즉시 결재 검토하기</a></div><div class="space-y-4"><div class="space-y-1"><div class="px-2.5 py-1 font-label-sm uppercase tracking-wider text-text-muted">메인 워크스페이스</div><nav class="space-y-0.5" data-active-classes="bg-surface-container text-primary font-semibold rounded-lg"><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="dashboard" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">dashboard</span><span>대시보드 홈</span></div></a><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="favorites" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">star</span><span>즐겨찾기 문서</span></div></a></nav></div><div class="space-y-1"><div class="px-2.5 py-1 font-label-sm uppercase tracking-wider text-text-muted">전자결재 센터</div><nav class="space-y-0.5" data-active-classes="bg-surface-container text-primary font-semibold rounded-lg"><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="draft-list" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">draw</span><span>기안서 작성 및 목록</span></div></a><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="approval-inbox" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">inbox</span><span>결재접수(내 차례)</span></div><span class="px-1.5 py-0.5 rounded-full bg-status-warning-bg text-status-warning font-data-mono-sm text-[11px] font-semibold">3</span></a><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="approval-requests" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">outbox</span><span>결재요청 문서</span></div><span class="px-1.5 py-0.5 rounded-full bg-surface-muted text-text-muted font-data-mono-sm text-[11px]">7</span></a><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="pending-archive" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">pending</span><span>미결 및 보류 내역</span></div></a><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="all-documents" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">folder</span><span>전체 문서함</span></div></a></nav></div><div class="space-y-1"><div class="px-2.5 py-1 font-label-sm uppercase tracking-wider text-text-muted">업무·자원 신청</div><nav class="space-y-0.5" data-active-classes="bg-surface-container text-primary font-semibold rounded-lg"><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="leave-request" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">event_available</span><span>연차 / 휴가계 신청</span></div></a><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="room-reservation" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">meeting_room</span><span>회의실 예약</span></div></a><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="welfare-application" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">health_and_safety</span><span>복리후생 신청</span></div></a><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="it-resource-request" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">devices</span><span>IT자원 및 SW 신청</span></div></a></nav></div><div class="space-y-1"><div class="px-2.5 py-1 font-label-sm uppercase tracking-wider text-text-muted">협업 및 사내정보</div><nav class="space-y-0.5" data-active-classes="bg-surface-container text-primary font-semibold rounded-lg"><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="notices" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">campaign</span><span>사내 공지사항</span></div></a><a class="flex items-center justify-between px-2.5 py-2 rounded-lg text-on-surface-variant hover:bg-surface-muted hover:text-on-surface transition-all font-body-sm" data-path="organization" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">account_tree</span><span>임직원 조직도</span></div></a><a aria-current="page" class="flex items-center justify-between px-2.5 py-2 transition-all bg-surface-container text-primary font-semibold rounded-lg" data-path="clubs" href="#"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-[19px]">groups</span><span>사내 동호회</span></div></a></nav></div></div></div><div class="p-4 bg-surface-muted/50"><div class="space-y-1.5"><a class="flex items-center gap-2 font-body-sm text-[12px] text-text-secondary hover:text-primary" data-path="security-guide" href="#"><span class="material-symbols-outlined text-[15px]">security</span><span>사내 보안 가이드라인</span></a><a class="flex items-center gap-2 font-body-sm text-[12px] text-text-secondary hover:text-primary" data-path="hrd-portal" href="#"><span class="material-symbols-outlined text-[15px]">school</span><span>인재개발원 (HRD)</span></a><a class="flex items-center gap-2 font-body-sm text-[12px] text-text-secondary hover:text-primary" data-path="system-guide" href="#"><span class="material-symbols-outlined text-[15px]">help</span><span>시스템 이용안내 &amp; 문의</span></a></div><div class="mt-3 pt-2 text-[11px] font-label-sm text-text-muted leading-tight">KIS Pricing v4.8 Enterprise<br/>ISMS-P 인증 정보자산 인프라</div></div></aside><div class="pl-64"><main class="w-full min-h-screen pt-16 bg-surface-root px-8 py-6"><div class="flex flex-col w-full">
+<!-- Top Context Header Bar (Institutional Social Hub) -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm uppercase tracking-widest text-text-muted">KIS Enterprise Life &amp; Culture</span>
+<span class="inline-block w-1 h-1 rounded-full bg-status-success"></span>
+<span class="font-label-sm text-status-success font-semibold">동호회 24개 운영 중</span>
+</div>
+<h1 class="font-headline-lg text-text-primary tracking-tight mt-1 flex items-center gap-2.5">
+        사내 동호회 커뮤니티 피드
+        <span class="px-2 py-0.5 rounded-full bg-surface-muted text-text-secondary font-data-mono-sm text-[12px] font-medium">Club Network</span>
+</h1>
+<p class="font-body-sm text-text-secondary mt-0.5">자율적 사내 교류와 워라밸 증진을 위한 소통 피드 및 활동 캘린더입니다.</p>
+</div>
+<!-- Quick Stat Pill Strip -->
+<div class="flex items-center gap-3">
+<div class="bg-surface-card px-4 py-2.5 rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-text-muted">전사 참여율</span>
+<span class="font-data-mono-md text-text-primary font-bold">68.4% <span class="font-body-sm text-status-success font-normal text-[11px]">(312명)</span></span>
+</div>
+</div>
+<div class="bg-surface-card px-4 py-2.5 rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-status-warning-bg flex items-center justify-center text-status-warning">
+<span class="material-symbols-outlined text-[20px]">savings</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-text-muted">분기 지원금 한도</span>
+<span class="font-data-mono-md text-text-primary font-bold">₩300,000 <span class="font-body-sm text-text-muted font-normal text-[11px]">/팀</span></span>
+</div>
+</div>
+<button class="h-10 px-4 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm font-semibold flex items-center gap-2 shadow-sm transition-all hover:scale-[1.01] active:scale-[0.99]" id="open-club-modal">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>동호회 개설 신청</span>
+</button>
+</div>
+</div>
+<!-- 3-Column Bento Layout (Left 22% - Center 53% - Right 25%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN: My Clubs & Directory (lg:col-span-3 ~25%) -->
+<aside class="lg:col-span-3 space-y-5">
+<!-- My Joined Clubs Panel -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[19px]">bookmark_heart</span>
+<h2 class="font-headline-sm text-text-primary">내가 가입한 동호회</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-data-mono-sm text-[11px] font-bold">3</span>
+</div>
+<div class="space-y-2">
+<!-- Club 1 -->
+<a class="group block p-2.5 rounded-lg bg-surface-muted/60 hover:bg-surface-container transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center font-headline-sm font-bold shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">sprint</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-body-sm font-semibold text-text-primary group-hover:text-primary truncate">러닝크루 '스트라이더'</span>
+<span class="w-2 h-2 rounded-full bg-status-success shrink-0" title="활동 활성"></span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-text-muted font-label-sm">
+<span>회원 34명</span>
+<span>•</span>
+<span class="text-status-warning font-medium">수요 정기런 D-2</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Club 2 -->
+<a class="group block p-2.5 rounded-lg hover:bg-surface-muted transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center font-headline-sm font-bold shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-body-sm font-semibold text-text-primary group-hover:text-primary truncate">금융 독서토론 '북마크'</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-text-muted font-label-sm">
+<span>회원 18명</span>
+<span>•</span>
+<span class="text-primary font-medium">4월 도서 투표중</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Club 3 -->
+<a class="group block p-2.5 rounded-lg hover:bg-surface-muted transition-all" href="#">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-headline-sm font-bold shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">sports_soccer</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-body-sm font-semibold text-text-primary group-hover:text-primary truncate">사내 풋살 'FC KIS'</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-text-muted font-label-sm">
+<span>회원 28명</span>
+<span>•</span>
+<span class="text-status-success font-medium">목요 매치 확정</span>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<!-- Recommended / Trending Clubs -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[18px]">explore</span>
+<h3 class="font-headline-sm text-text-primary text-[14px]">추천 인기 동호회</h3>
+</div>
+<a class="font-label-sm text-primary hover:underline" href="#">전체보기</a>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-muted flex items-center justify-center text-text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]">camping</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm font-medium text-text-primary truncate">캠핑 &amp; 아웃도어 클럽</span>
+<span class="font-label-sm text-text-muted">회원 42명 · 봄철 글램핑 모집</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-muted hover:bg-surface-container text-text-primary hover:text-primary font-label-sm font-semibold transition-colors shrink-0">가입</button>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-muted flex items-center justify-center text-text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]">bakery_dining</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm font-medium text-text-primary truncate">달콤 베이킹 &amp; 쿠킹랩</span>
+<span class="font-label-sm text-text-muted">회원 19명 · 월 1회 원데이</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-muted hover:bg-surface-container text-text-primary hover:text-primary font-label-sm font-semibold transition-colors shrink-0">가입</button>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-muted flex items-center justify-center text-text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]">casino</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm font-medium text-text-primary truncate">전략 보드게임 '미플'</span>
+<span class="font-label-sm text-text-muted">회원 15명 · 점심시간 리그전</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-muted hover:bg-surface-container text-text-primary hover:text-primary font-label-sm font-semibold transition-colors shrink-0">가입</button>
+</div>
+</div>
+</div>
+<!-- Subsidy Program Callout Card -->
+<div class="bg-gradient-to-br from-surface-card via-surface-card to-surface-container rounded-xl p-4 shadow-sm relative overflow-hidden">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">redeem</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm text-text-primary text-[13px] font-semibold">2025 복리후생 동호회 지원금</h4>
+<p class="font-body-sm text-[12px] text-text-secondary mt-1 leading-relaxed">
+              임직원 5인 이상 정기 모임 시 <span class="font-semibold text-primary">분기당 300,000원</span> 활동 보조비가 전액 실비 지원됩니다.
+            </p>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-data-mono-sm text-[11px] text-text-muted">경영관리실 복리후생팀</span>
+<a class="font-body-sm text-[12px] text-primary font-semibold hover:underline flex items-center gap-0.5" href="#">
+                운영규정 <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- CENTER COLUMN: Facebook-Style Feed (lg:col-span-6 ~50%) -->
+<main class="lg:col-span-6 space-y-5">
+<!-- Creator Box (Facebook Composer Pattern) -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 font-body-sm font-semibold">
+            김
+          </div>
+<button class="flex-1 h-10 px-4 bg-surface-muted hover:bg-surface-container/60 rounded-full text-left font-body-sm text-text-muted transition-colors flex items-center justify-between" id="composer-trigger">
+<span>김대리님, 동호회 활동 소식이나 후기를 남겨보세요!</span>
+<span class="material-symbols-outlined text-text-muted text-[18px]">edit</span>
+</button>
+</div>
+<div class="pt-2 flex items-center justify-between px-2 text-text-secondary">
+<div class="flex items-center gap-1 sm:gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-surface-muted transition-colors font-body-sm text-[13px] text-status-success font-medium">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+<span class="text-text-primary hidden sm:inline">사진/영상</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-surface-muted transition-colors font-body-sm text-[13px] text-status-warning font-medium">
+<span class="material-symbols-outlined text-[20px]">how_to_vote</span>
+<span class="text-text-primary hidden sm:inline">투표 만들기</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-surface-muted transition-colors font-body-sm text-[13px] text-primary-container font-medium">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span class="text-text-primary hidden sm:inline">일정 추가</span>
+</button>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-text-muted text-[18px]">sell</span>
+<span class="font-label-sm text-text-muted hidden md:inline">클럽 태그</span>
+</div>
+</div>
+</div>
+<!-- Weekend Story / Moments Carousel -->
+<div class="bg-surface-card rounded-xl p-3.5 shadow-sm space-y-2.5">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">amp_stories</span>
+<span class="font-headline-sm text-text-primary text-[13px] font-semibold">주말 활동 숏스토리</span>
+</div>
+<span class="font-label-sm text-text-muted">최근 48시간 내 활동</span>
+</div>
+<div class="grid grid-cols-4 gap-2.5">
+<!-- Story Card 1 (Add My Story) -->
+<div class="relative h-36 rounded-lg overflow-hidden bg-surface-muted flex flex-col justify-end p-2 cursor-pointer group shadow-inner">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent z-10"></div>
+<div class="absolute top-2 left-2 z-20 w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</div>
+<span class="relative z-20 font-body-sm text-on-primary text-[11px] font-semibold leading-tight">스토리 등록</span>
+</div>
+<!-- Story Card 2: Running -->
+<div class="relative h-36 rounded-lg overflow-hidden cursor-pointer group shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" data-alt="A vivid photograph of Korean corporate workers in active athletic running gear smiling at Yeouido Hangang park riverbank illuminated by cherry blossom night lights and the city skyline of Seoul in high aesthetic modern photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCU7YgBUmJWDqWz-WEqaMKxlz3k_T9crPGfiMnM9_0QhVygVJkhU34FdMK7rkrmIIbSbb5SHft7ktm6NdyYqk6aqpIj1c0uWcZQfkVQem5dIAX7NYbRDuzWAqHZvlG90AGTVMqlhv8_E_7IYVJLGCPvNQiYOprpqUmcSuNb2Ck7oTP0mCWYNlFLZff3qlV_hvHhnfsklt3cKPpKQTW_L5cNNMq0eWKXC3zbS3ok6bY')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent z-10"></div>
+<div class="absolute top-2 left-2 z-20 w-6 h-6 rounded-full bg-status-success text-on-primary flex items-center justify-center font-label-sm font-bold shadow">
+              박
+            </div>
+<div class="relative z-20">
+<span class="font-body-sm text-on-primary text-[11px] font-semibold line-clamp-1">한강 나이트런</span>
+<span class="font-data-mono-sm text-surface-variant text-[10px]">스트라이더</span>
+</div>
+</div>
+<!-- Story Card 3: Futsal -->
+<div class="relative h-36 rounded-lg overflow-hidden cursor-pointer group shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" data-alt="Energetic shot of an indoor or evening turf soccer pitch with corporate amateur players high-fiving after a friendly futsal match under floodlights with modern athletic gear." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5nffNuY2w7U1nmJtgS_uHfoOrR8RKrZ27mN2UtqjPuk4Fc_YFFUz_i6ySYWXF8DYU7hOLL4xUIdImoXjCMBEWnhNPeEMA1JKifCuGF5M_rQckkiAP2B5oNneY8zgEyx_Mzj_xpf1kbxApgKgAW8xIa6YvYDbL65E2dL__k9hXeGhNdIgkarDcmLuFuc8d-ZJjoqg0XdOi2p2tbtqJX3NkyqwvYbogW3WXC0mdPRw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent z-10"></div>
+<div class="absolute top-2 left-2 z-20 w-6 h-6 rounded-full bg-tertiary-container text-on-primary flex items-center justify-center font-label-sm font-bold shadow">
+              이
+            </div>
+<div class="relative z-20">
+<span class="font-body-sm text-on-primary text-[11px] font-semibold line-clamp-1">풋살 리그 3:2 승</span>
+<span class="font-data-mono-sm text-surface-variant text-[10px]">FC KIS</span>
+</div>
+</div>
+<!-- Story Card 4: Baking -->
+<div class="relative h-36 rounded-lg overflow-hidden cursor-pointer group shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" data-alt="Close up aesthetic shot of freshly baked artisan sourdough bread and delicate french madeleines resting on a marble kitchen counter bathed in soft morning light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQ6AMQhKfuUKNezEZDOmIrbIxclVMqbEv-4PMJ2pKaDGo-aYX8R0j6jcVR2QmaozjUiTFcdMIpJMIxTOyjzI0-kE6KFxwIX1CyeWc4ZvupKxgAfsXBut-LGbHjCaRrFynq6akDgnGWmZ7PJsjB5VbqU2siBVOf3L6-lYtDcU7LMobKvL8g1WZP8faH9qCAHBhMs_cEbHa1dG_M91lZqoUOp-EQStBwovXvzU8hvg8')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent z-10"></div>
+<div class="absolute top-2 left-2 z-20 w-6 h-6 rounded-full bg-status-warning text-on-primary flex items-center justify-center font-label-sm font-bold shadow">
+              최
+            </div>
+<div class="relative z-20">
+<span class="font-body-sm text-on-primary text-[11px] font-semibold line-clamp-1">마들렌 클래스</span>
+<span class="font-data-mono-sm text-surface-variant text-[10px]">베이킹랩</span>
+</div>
+</div>
+</div>
+</div>
+<!-- POST 1: Running Crew Photo Grid Post -->
+<article class="bg-surface-card rounded-xl shadow-sm overflow-hidden space-y-3">
+<!-- Post Header -->
+<div class="p-4 pb-0 flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-on-primary font-body-sm font-bold">
+                박
+              </div>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-status-success text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px]">sprint</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-body-sm font-bold text-text-primary">박준형 수석</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-muted text-text-muted font-label-sm">금융공학연구실</span>
+<span class="text-text-muted text-[12px]">▶</span>
+<span class="font-body-sm font-semibold text-primary">러닝크루 '스트라이더'</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-text-muted font-label-sm">
+<span>3시간 전</span>
+<span>•</span>
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">public</span> 사내 공개
+                </span>
+<span>•</span>
+<span class="text-status-success font-medium">여의도 한강공원</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-text-muted hover:bg-surface-muted hover:text-text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Post Content -->
+<div class="px-4 space-y-2">
+<p class="font-body-sm text-text-primary leading-relaxed">
+            어제 여의도 한강공원 7km 벚꽃 나이트 러닝 무사히 마쳤습니다! 🌸🏃‍♂️<br/>
+            이번 세션에는 신규 입사하신 인턴 연구원분들도 열정적으로 참석하셔서 전원 완주하셨네요. 
+            시원한 강바람 맞으며 업무 스트레스 제대로 날렸습니다. 다음 주 정기 런도 수요일 저녁(19:00)에 동일하게 진행되니 부담 없이 합류하세요!
+          </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-muted text-primary font-data-mono-sm text-[11px]">#스트라이더</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-muted text-text-secondary font-data-mono-sm text-[11px]">#여의도한강나이트런</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-muted text-text-secondary font-data-mono-sm text-[11px]">#7K완주</span>
+</div>
+</div>
+<!-- Rich Photo Collage (3-image Bento Grid) -->
+<div class="grid grid-cols-12 gap-1.5 px-4 pt-1">
+<div class="col-span-8 h-64 rounded-l-lg overflow-hidden relative group cursor-pointer">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" data-alt="A group photo of diverse Korean finance professionals gathered at night under glowing streetlights and blooming cherry blossoms along the Han River in Seoul, holding running flags and flashing peace signs, captured in cinematic corporate documentary photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD4gNfv9ARrnxfrscpfeYL00c_5mSTC7EH0lif3IIzEpDea_HY6_ebykj0fzMoiSAX35kN-VjFAZIyW-it3R0RbV-HH-QVnskAaYbnZA4tr-I7xyPkC_acxv9I31wpakdB5XeMsYWe27sVeENawQBykg55MkM6pi8X1byXUJxRhhjUkLG-zpKOwvZ7slwCRHEOeqDv2PIQNJB7pB9QIt2ElvNl2lzbpD37WmmXDs_4')"></div>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm text-white font-label-sm">
+              전체 완주 기념 단체샷
+            </div>
+</div>
+<div class="col-span-4 flex flex-col gap-1.5 h-64">
+<div class="h-1/2 rounded-tr-lg overflow-hidden relative group cursor-pointer">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" data-alt="Close up of modern GPS running watch displaying 7.02 km distance with 5 minute 14 second pace alongside city night lights reflected on asphalt." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfixFIXHPdg_bcbGvAU5qHV9ZKRoiBr5olpk90ogJ6xuyRkFCKsE20jrr8d94sIFKFczHSSfX72jjwAB3Rt9gDfrZuqnGy8x4vKUHrBvhhY2onq4kkzXjA_HCPRMLiqKVrwPAiQ9eqbNNf-Xaa_hgfjdJDHfXqIgjNxJ0AbiEKH5_owIpCNPimqxzLumNJmdpasgJuUZQzDBZV9a50hXwFvZfXCcBzWEov4xp8nYs')"></div>
+</div>
+<div class="h-1/2 rounded-br-lg overflow-hidden relative group cursor-pointer">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" data-alt="A candid photo of runners hydrating with healthy beverages and electrolyte drinks at an open riverside plaza laughing together." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsweTMZu2O8ggP-bsNdE0QqnBnO4yZtW6Zek_Ymn2KGOYOYkwsGwTfMIswRfy4NVf1zPhoFWfnYJO88iQMxMyo-bR6neUJsay2V81XgUDTXj3hrqp3V9nHM17W1rX1EqWVhg52jfvEkGpo7lMghepxFPJZ1iJhi8LniX3beF71YchfcMarHA0eqLBkn2N-_fXJLd4avEYi97MWW_Pb0JZT4LB30pGWQ3CQR4ehp3g')"></div>
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-[1px] flex items-center justify-center text-on-primary font-headline-sm text-[13px] font-bold">
+                +4장 더보기
+              </div>
+</div>
+</div>
+</div>
+<!-- Social Reaction Counter Bar -->
+<div class="px-4 py-2 flex items-center justify-between text-text-muted font-label-sm">
+<div class="flex items-center gap-1.5">
+<div class="flex items-center -space-x-1.5">
+<span class="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary text-[10px] shadow">👍</span>
+<span class="w-5 h-5 rounded-full bg-status-danger flex items-center justify-center text-on-primary text-[10px] shadow">❤️</span>
+<span class="w-5 h-5 rounded-full bg-status-warning flex items-center justify-center text-on-primary text-[10px] shadow">🔥</span>
+</div>
+<span class="font-data-mono-sm text-text-secondary font-medium ml-1">28명</span>
+<span class="text-text-muted">이 반응했습니다</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="hover:underline cursor-pointer">댓글 9개</span>
+<span>•</span>
+<span class="hover:underline cursor-pointer">공유 2회</span>
+</div>
+</div>
+<!-- Action Button Row -->
+<div class="px-2 py-1 bg-surface-muted/30 flex items-center justify-around font-body-sm font-medium text-text-secondary">
+<button class="like-btn flex-1 py-1.5 rounded-lg hover:bg-surface-muted transition-colors flex items-center justify-center gap-1.5 text-text-secondary hover:text-primary">
+<span class="material-symbols-outlined text-[19px]">thumb_up</span>
+<span>좋아요</span>
+</button>
+<button class="flex-1 py-1.5 rounded-lg hover:bg-surface-muted transition-colors flex items-center justify-center gap-1.5 text-text-secondary hover:text-primary">
+<span class="material-symbols-outlined text-[19px]">chat_bubble</span>
+<span>댓글 달기</span>
+</button>
+<button class="flex-1 py-1.5 rounded-lg hover:bg-surface-muted transition-colors flex items-center justify-center gap-1.5 text-text-secondary hover:text-status-warning">
+<span class="material-symbols-outlined text-[19px]">volunteer_activism</span>
+<span>응원하기</span>
+</button>
+</div>
+<!-- Comments Stream -->
+<div class="p-4 pt-1 space-y-3 bg-surface-muted/20">
+<!-- Comment 1 -->
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-primary font-label-sm font-bold shrink-0">
+              정
+            </div>
+<div class="flex-1">
+<div class="bg-surface-card p-3 rounded-xl shadow-xs space-y-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm font-semibold text-text-primary text-[13px]">정다은 선임</span>
+<span class="font-label-sm text-text-muted">채권평가1본부</span>
+</div>
+<span class="font-data-mono-sm text-[10px] text-text-muted">2시간 전</span>
+</div>
+<p class="font-body-sm text-text-secondary text-[13px]">
+                  인턴 첫 주라 긴장했는데 선배님들이 페이스 맞춰주셔서 끝까지 달릴 수 있었습니다! 다음 주 수요일에도 무조건 참석할게요 감사합니다 🏃‍♀️✨
+                </p>
+</div>
+<div class="flex items-center gap-3 px-2 pt-1 font-label-sm text-text-muted">
+<button class="hover:underline">좋아요</button>
+<span>•</span>
+<button class="hover:underline">답글</button>
+</div>
+</div>
+</div>
+<!-- Comment 2 -->
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-label-sm font-bold shrink-0">
+              이
+            </div>
+<div class="flex-1">
+<div class="bg-surface-card p-3 rounded-xl shadow-xs space-y-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm font-semibold text-text-primary text-[13px]">이지훈 팀장</span>
+<span class="font-label-sm text-text-muted">리스크컨설팅부</span>
+</div>
+<span class="font-data-mono-sm text-[10px] text-text-muted">1시간 전</span>
+</div>
+<p class="font-body-sm text-text-secondary text-[13px]">
+                  사진 멋지네요! 다음 주에는 저희 리스크팀 2명도 게스트로 동반 신청하겠습니다.
+                </p>
+</div>
+<div class="flex items-center gap-3 px-2 pt-1 font-label-sm text-text-muted">
+<button class="hover:underline">좋아요</button>
+<span>•</span>
+<button class="hover:underline">답글</button>
+</div>
+</div>
+</div>
+<!-- Comment Input Field -->
+<div class="flex items-center gap-2 pt-1">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary font-label-sm shrink-0">
+              김
+            </div>
+<div class="flex-1 relative">
+<input class="w-full h-9 pl-3.5 pr-16 bg-surface-card rounded-lg font-body-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:bg-surface-card shadow-xs transition-all" placeholder="응원의 댓글을 남겨보세요..." type="text"/>
+<div class="absolute right-2 top-1.5 flex items-center gap-1 text-text-muted">
+<button class="hover:text-primary"><span class="material-symbols-outlined text-[18px]">sentiment_satisfied</span></button>
+<button class="hover:text-primary"><span class="material-symbols-outlined text-[18px]">send</span></button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- POST 2: Interactive Book Club Poll Component -->
+<article class="bg-surface-card rounded-xl shadow-sm p-4 space-y-3.5">
+<!-- Post Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-11 h-11 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary font-body-sm font-bold">
+                최
+              </div>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px]">menu_book</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-body-sm font-bold text-text-primary">최민주 수석</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-muted text-text-muted font-label-sm">파생상품평가본부</span>
+<span class="text-text-muted text-[12px]">▶</span>
+<span class="font-body-sm font-semibold text-primary">금융 독서토론 '북마크'</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-text-muted font-label-sm">
+<span>5시간 전</span>
+<span>•</span>
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">how_to_vote</span> 투표 진행 중 (D-1)
+                </span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-status-warning-bg text-status-warning font-data-mono-sm text-[11px] font-semibold">마감임박</span>
+</div>
+<!-- Post Content -->
+<p class="font-body-sm text-text-primary leading-relaxed">
+          [북마크 4월 정기 세미나 발제도서 선정 투표] 📚<br/>
+          이번 4월에는 거시 금융 사이클과 인간 심리를 다룬 2개 후보작 중 한 권을 완독하고 발제 토론을 진행합니다. 회원 여러분의 소중한 한 표 부탁드립니다!
+        </p>
+<!-- Poll Interactive Box -->
+<div class="bg-surface-muted/40 rounded-xl p-4 space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm uppercase tracking-wider text-text-muted">총 32명 참여 중 (익명 투표)</span>
+<span class="font-data-mono-sm text-[11px] text-primary font-semibold">4월 17일 18:00 종료</span>
+</div>
+<!-- Option 1 (Leading) -->
+<div class="space-y-1.5 cursor-pointer group">
+<div class="flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-primary flex items-center justify-center text-on-primary text-[10px]">✓</span>
+<span class="font-semibold text-text-primary">1안: 『자본주의와 금융의 미래』 (마크 카니 저)</span>
+</div>
+<span class="font-data-mono-md text-primary font-bold">62% <span class="font-label-sm text-text-muted font-normal">(20표)</span></span>
+</div>
+<!-- Progress Bar -->
+<div class="h-2.5 w-full bg-surface-muted rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 62%;"></div>
+</div>
+</div>
+<!-- Option 2 -->
+<div class="space-y-1.5 cursor-pointer group pt-1">
+<div class="flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-4 h-4 rounded-full bg-surface-muted flex items-center justify-center text-text-muted text-[10px]"></span>
+<span class="font-medium text-text-secondary">2안: 『행동경제학 실무와 시장 왜곡』 (리처드 세일러 외)</span>
+</div>
+<span class="font-data-mono-md text-text-secondary font-bold">38% <span class="font-label-sm text-text-muted font-normal">(12표)</span></span>
+</div>
+<!-- Progress Bar -->
+<div class="h-2.5 w-full bg-surface-muted rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-500" style="width: 38%;"></div>
+</div>
+</div>
+<!-- Poll Footer -->
+<div class="pt-2 flex items-center justify-between">
+<div class="flex items-center -space-x-1">
+<span class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center text-[9px] font-bold text-primary">K</span>
+<span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-[9px] font-bold text-primary">P</span>
+<span class="w-5 h-5 rounded-full bg-secondary-fixed flex items-center justify-center text-[9px] font-bold text-on-secondary-fixed">L</span>
+</div>
+<button class="px-3 py-1 rounded-lg bg-surface-card hover:bg-surface-muted text-text-primary font-label-sm font-semibold transition-colors shadow-xs">
+              투표 변경하기
+            </button>
+</div>
+</div>
+<!-- Social Action Strip -->
+<div class="pt-1 flex items-center justify-between text-text-muted font-label-sm">
+<span>좋아요 14개 · 댓글 4개</span>
+<button class="text-primary hover:underline font-body-sm text-[12px] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">share</span> 링크 복사
+          </button>
+</div>
+</article>
+</main>
+<!-- RIGHT COLUMN: Calendar, Best Club & Policy Guide (lg:col-span-3 ~25%) -->
+<aside class="lg:col-span-3 space-y-5">
+<!-- Upcoming Club Calendar Widget -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[19px]">event_note</span>
+<h3 class="font-headline-sm text-text-primary text-[14px]">이번 주 동호회 일정</h3>
+</div>
+<span class="font-label-sm text-status-success font-semibold">이번 주 4건</span>
+</div>
+<div class="space-y-3">
+<!-- Event 1 -->
+<div class="p-2.5 rounded-lg bg-surface-muted/50 hover:bg-surface-muted transition-colors flex items-start gap-3">
+<div class="w-11 h-12 rounded-lg bg-surface-card shadow-xs flex flex-col items-center justify-center shrink-0 text-text-primary">
+<span class="font-label-sm text-status-danger uppercase font-bold leading-none">THU</span>
+<span class="font-data-mono-lg font-bold leading-tight mt-0.5">16</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm font-semibold text-text-primary truncate">FC KIS 4월 정기전</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted font-label-sm mt-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>19:00 ~ 21:00</span>
+</div>
+<div class="flex items-center gap-1 text-text-secondary font-label-sm mt-0.5 truncate">
+<span class="material-symbols-outlined text-[14px] text-text-muted">location_on</span>
+<span>여의도 풋살파크 A구장</span>
+</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="p-2.5 rounded-lg bg-surface-muted/50 hover:bg-surface-muted transition-colors flex items-start gap-3">
+<div class="w-11 h-12 rounded-lg bg-surface-card shadow-xs flex flex-col items-center justify-center shrink-0 text-text-primary">
+<span class="font-label-sm text-primary uppercase font-bold leading-none">SAT</span>
+<span class="font-data-mono-lg font-bold leading-tight mt-0.5">18</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm font-semibold text-text-primary truncate">산악회 북한산 봄 산행</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted font-label-sm mt-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>10:00 ~ 15:30</span>
+</div>
+<div class="flex items-center gap-1 text-text-secondary font-label-sm mt-0.5 truncate">
+<span class="material-symbols-outlined text-[14px] text-text-muted">location_on</span>
+<span>북한산 백운대 코스 (모집 12/15)</span>
+</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="p-2.5 rounded-lg bg-surface-muted/50 hover:bg-surface-muted transition-colors flex items-start gap-3">
+<div class="w-11 h-12 rounded-lg bg-surface-card shadow-xs flex flex-col items-center justify-center shrink-0 text-text-primary">
+<span class="font-label-sm text-text-muted uppercase font-bold leading-none">TUE</span>
+<span class="font-data-mono-lg font-bold leading-tight mt-0.5">21</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm font-semibold text-text-primary truncate">북마크 4월 정기 세미나</span>
+</div>
+<div class="flex items-center gap-1 text-text-muted font-label-sm mt-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>18:30 대회의실 3</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-muted hover:bg-surface-container text-text-secondary hover:text-primary rounded-lg font-body-sm text-[12px] font-semibold transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_add_on</span>
+<span>내 캘린더에 전체 동기화</span>
+</button>
+</div>
+<!-- Best Club Spotlight of the Quarter -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-status-warning text-[20px]">military_tech</span>
+<span class="font-headline-sm text-text-primary text-[14px]">이달의 우수 동호회</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-status-warning-bg text-status-warning font-data-mono-sm text-[10px] font-bold">1분기 최우수</span>
+</div>
+<div class="relative rounded-lg overflow-hidden h-28 shadow-inner">
+<div class="w-full h-full bg-cover bg-center" data-alt="Corporate running group standing proud with bright athletic medals at an urban marathon race in Seoul with high corporate camaraderie and sleek navy and white jerseys." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgQmO0k9UEZfCxeoE2oMgUtxuSEvUzazESR3wqxk7kucny3Z65-ij2YQAoe8gWxR9tm38Kok8PWZ131Je_8TU6-_Jh0TISqnrPRmtddJK6jcPCf1hkYGniGKPBeYy22WoZBE7aiFI7CUBVFYnvJVmixOg_qIIh3IilV_MKgnyvphu69uqiNmL45QnKec6ME0M-00gcbwY5JfKrkEiAz_Fffwe2CpqGaUg0oYArAkg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-2.5 left-3 right-3 text-on-primary">
+<span class="font-label-sm uppercase tracking-wider text-surface-variant font-semibold">러닝크루 '스트라이더'</span>
+<p class="font-body-sm text-[12px] font-medium leading-tight mt-0.5">정기 세미나 출석률 98% 달성 · 3분기 우수활동 지원금 추가 ₩200,000 수여</p>
+</div>
+</div>
+<p class="font-body-sm text-[12px] text-text-secondary leading-snug">
+          전 임직원 건강 챌린지 주관 및 기부 마라톤 참가 등 사내 활력 증진에 기여하여 분기 최우수 클럽으로 선정되었습니다.
+        </p>
+</div>
+<!-- Governance & Expense Guidelines Accordion -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[18px]">gavel</span>
+<h4 class="font-headline-sm text-text-primary text-[13px]">동호회 운영 및 경비 규칙</h4>
+</div>
+<ul class="space-y-2 text-text-secondary font-body-sm text-[12px]">
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+<span>최소 인원 요건: 본부 2개 이상 5인 이상 구성 시 정식 승인</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+<span>지원금 청구: 매 분기 말일 전 영수증 첨부 전자결재 상신</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+<span>활동 보고: 분기별 최소 2회 활동 사진 피드 업로드 필수</span>
+</li>
+</ul>
+<div class="pt-2 flex items-center justify-between">
+<a class="font-body-sm text-[12px] text-primary hover:underline flex items-center gap-1 font-semibold" href="#">
+<span class="material-symbols-outlined text-[15px]">download</span> 지원금 신청서 서식 (XLSX)
+          </a>
+</div>
+</div>
+</aside>
+</div>
+<!-- Modal Component: Create Club Registration (Vanilla Interactive) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden items-center justify-center p-4" id="club-modal">
+<div class="bg-surface-card w-full max-w-lg rounded-2xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<div class="p-5 pb-4 flex items-center justify-between border-b border-surface-muted">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">add_circle</span>
+<h3 class="font-headline-md text-text-primary">신규 사내 동호회 개설 신청</h3>
+</div>
+<button class="p-1 rounded-lg hover:bg-surface-muted text-text-muted hover:text-text-primary" id="close-club-modal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="p-5 space-y-4" onsubmit="event.preventDefault(); alert('사내 동호회 개설 신청서가 복리후생팀으로 제출되었습니다.'); document.getElementById('club-modal').classList.add('hidden'); document.getElementById('club-modal').classList.remove('flex');">
+<div>
+<label class="block font-label-md text-text-secondary mb-1">동호회 명칭</label>
+<input class="w-full h-10 px-3 bg-surface-muted rounded-lg font-body-sm text-text-primary focus:outline-none focus:bg-surface-card shadow-inner" placeholder="예: KIS 테니스 클럽 '스매시'" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block font-label-md text-text-secondary mb-1">분류 카테고리</label>
+<select class="w-full h-10 px-3 bg-surface-muted rounded-lg font-body-sm text-text-primary focus:outline-none shadow-inner">
+<option>스포츠 / 피트니스</option>
+<option>문화 / 예술 / 취미</option>
+<option>학술 / 직무 스터디</option>
+<option>아웃도어 / 레저</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-text-secondary mb-1">초기 발기 회원 수</label>
+<input class="w-full h-10 px-3 bg-surface-muted rounded-lg font-body-sm text-text-primary focus:outline-none shadow-inner" min="5" required="" type="number" value="5"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-text-secondary mb-1">주요 활동 계획 및 개설 취지</label>
+<textarea class="w-full p-3 bg-surface-muted rounded-lg font-body-sm text-text-primary focus:outline-none focus:bg-surface-card shadow-inner" placeholder="정기 모임 주기(월 1회 등), 주요 활동 내용 및 사내 소통 기대효과를 기재하세요." required="" rows="3"></textarea>
+</div>
+<div class="p-3 bg-status-warning-bg rounded-xl text-status-warning font-label-sm leading-relaxed">
+          💡 개설 요건: 복수 부서 임직원 5인 이상의 동의가 필요하며, 심의 승인 후 분기 활동 지원금(₩300,000) 계좌가 발급됩니다.
+        </div>
+<div class="pt-2 flex items-center justify-end gap-2.5">
+<button class="px-4 py-2 rounded-lg hover:bg-surface-muted text-text-secondary font-body-sm font-semibold" id="cancel-club-modal" type="button">취소</button>
+<button class="px-5 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-body-sm font-semibold shadow-sm" type="submit">신청서 상신</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Inline Micro-interactions Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Modal controls
+      const openBtn = document.getElementById('open-club-modal');
+      const closeBtn = document.getElementById('close-club-modal');
+      const cancelBtn = document.getElementById('cancel-club-modal');
+      const modal = document.getElementById('club-modal');
+      const composerTrigger = document.getElementById('composer-trigger');
+
+      if (openBtn && modal) {
+        openBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+        });
+      }
+
+      if (composerTrigger) {
+        composerTrigger.addEventListener('click', () => {
+          alert('피드 작성 에디터가 활성화되었습니다. 동호회를 선택하고 사진이나 투표를 첨부하세요.');
+        });
+      }
+
+      const closeModal = () => {
+        if (modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      };
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+      // Social like toggle effect
+      const likeButtons = document.querySelectorAll('.like-btn');
+      likeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const icon = this.querySelector('.material-symbols-outlined');
+          const isLiked = this.classList.contains('text-primary');
+          if (isLiked) {
+            this.classList.remove('text-primary', 'font-bold');
+            this.classList.add('text-text-secondary');
+            if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+          } else {
+            this.classList.add('text-primary', 'font-bold');
+            this.classList.remove('text-text-secondary');
+            if (icon) icon.style.fontVariationSettings = "'FILL' 1";
+          }
+        });
+      });
+    });
+  </script>
+</div></main></div></body></html>
